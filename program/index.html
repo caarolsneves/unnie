@@ -39,13 +39,17 @@
     padding-top: 60px;
   }
 
-  .card {
-  background-color: #ffffff !important; /* Mantém o fundo das cartas branco */
-  color: #222 !important;
+:root {
+  color-scheme: light !important; /* Impede que o sistema mude para modo escuro */
+  forced-color-adjust: none !important; /* Bloqueia alterações automáticas */
 }
 
-.title, .subtitle {
-  color: #222 !important; /* Garante que os textos fiquem visíveis */
+.has-background-warning {
+  background-color: #ffc107 !important; /* Mantém o amarelo */
+}
+
+.has-text-white {
+  color: #ffffff !important; /* Mantém o texto branco */
 }
 
   .swiper {
