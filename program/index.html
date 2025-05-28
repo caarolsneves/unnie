@@ -488,7 +488,6 @@
 
 
 <!------------------------------------- JAVA SCRIPT --------------------------------------->
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
   // Efeito typing sem cursor, agora com callback para mostrar o botão depois
@@ -548,38 +547,27 @@
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    const $burger = document.querySelector('.navbar-burger');
-    const $menu = document.querySelector('.navbar-menu');
-    const $menuItems = document.querySelectorAll('.navbar-item');
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById('navbarBasicExample');
 
     // Alterna o menu ao clicar no botão hamburguer
-    $burger.addEventListener('click', () => {
-      $burger.classList.toggle('is-active');
-      $menu.classList.toggle('is-active');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
     });
 
     // Fecha o menu ao clicar em qualquer item de navegação
-    $menuItems.forEach(item => {
+    const menuItems = menu.querySelectorAll('.navbar-item');
+    menuItems.forEach(item => {
       item.addEventListener('click', () => {
-        if ($burger.classList.contains('is-active')) {
-          $burger.classList.remove('is-active');
-          $menu.classList.remove('is-active');
+        if (burger.classList.contains('is-active')) {
+          burger.classList.remove('is-active');
+          menu.classList.remove('is-active');
         }
       });
     });
   });
-
-  document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.querySelector('.navbar-burger');
-  const menu = document.getElementById('navbarBasicExample');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('is-active');
-    menu.classList.toggle('is-active');
-  });
-});
-
 </script>
-
 
 </body>
 </html>
