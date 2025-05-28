@@ -39,6 +39,22 @@
     padding-top: 60px;
   }
 
+  .column.is-one-fifth {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-content {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
   .swiper {
     width: 100vw;
     height: 80vh;
@@ -156,15 +172,25 @@
       flex-direction: column;
       align-items: center;
     }
+    .responsive-button {
+    width: auto;
+    max-width: 400px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    white-space: nowrap;
+    display: inline-block; /* garante que o botão se ajuste ao texto */
+  }
 
-    .card {
-      width: 90vw !important;
-      max-width: none !important;
+  @media (max-width: 480px) {
+    .responsive-button {
+      width: 90%;
+      white-space: normal; /* permite quebra de linha para não cortar texto */
+      font-size: 0.9rem; /* reduz um pouco a fonte */
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
+  }
 
-    .card-image figure.image {
-      width: 100% !important;
-    }
   }
 
   /* Para telas muito pequenas (ex: celulares pequenos) */
@@ -187,6 +213,8 @@
       font-size: 0.9rem;
     }
   }
+
+
   </style>
 
   <!------------------------------------- BARRA DE NAVEGAÇÃO --------------------------------------->
@@ -204,10 +232,10 @@
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
-  <div class="navbar-start">
+  <div class="navbar-start"  style="margin: 0 auto;">
     <a class="navbar-item" href="index.html">Home</a>
-    <a class="navbar-item" href="comofunciona.html">Como Funciona</a>
-    <a class="navbar-item" href="#sobre-nos">Quem somos</a>
+    <a class="navbar-item" href="#comofunciona">Como Funciona</a>
+    <a class="navbar-item" href="quemsomos.html">Quem somos</a>
     <a class="navbar-item" href="#contato">Contato</a>
   </div>
 
@@ -255,73 +283,165 @@
       <button class="slide-button">Saiba mais</button>
     </div>
     <div class="swiper-pagination"></div>
-
+  </div>
   </div>
 
-  <!------------------------------------- CARD SOBRE NÓS --------------------------------------->
+  <!------------------------------------- Como funciona --------------------------------------->
+<section id="comofunciona" class="section">
+  <div class="container">
+    <div class="box" style="background: #f9faff; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 2rem;">
 
-  
-  <div id="sobre-nos" class="columns is-variable is-6"></div>
+      <h2 class="title is-3 has-text-centered" style="color: #3273dc; margin-bottom: 2rem;">
+        Como funcionam nossas aulas online de Apoio Escolar?
+      </h2>
+
+      <p class="is-size-5 has-text-centered" style="margin-bottom: 3rem; color: #4a4a4a;">
+        Aqui na Unnie Apoio Escolar, oferecemos <em>aulas online</em> pensadas para ajudar seu filho de forma prática, acolhedora e eficaz, mesmo sem sair de casa. Veja como funciona:
+      </p>
+
+      <div class="columns is-multiline is-variable is-6">
+
+        <div class="column is-half">
+          <div class="box" style="background-color: #e8f0fe; border-radius: 10px;">
+            <p style="font-size: 2rem; margin-bottom: 0.5rem;">🧑‍🏫</p>
+            <h3 class="title is-5" style="color: #2952cc;">Aulas individuais e personalizadas</h3>
+            <p>Cada aluno é único! Por isso, nossas aulas são <strong>individuais</strong>, adaptadas ao ritmo e às necessidades de cada criança ou adolescente. Trabalhamos com o conteúdo que ele está aprendendo na escola ou com o que precisa reforçar.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="box" style="background-color: #fff3cd; border-radius: 10px;">
+            <p style="font-size: 2rem; margin-bottom: 0.5rem;">💻</p>
+            <h3 class="title is-5" style="color: #856404;">Plataforma fácil de usar</h3>
+            <p>As aulas acontecem por videochamada, na plataforma Zoom — simples de acessar, mesmo para quem não tem muita experiência com tecnologia. Antes da primeira aula, você recebe tutorial mostrando a maneira de entrar, é muito intuitivo para as crianças.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="box" style="background-color: #d4edda; border-radius: 10px;">
+            <p style="font-size: 2rem; margin-bottom: 0.5rem;">📚</p>
+            <h3 class="title is-5" style="color: #155724;">Apoio nas lições de casa e muito mais</h3>
+            <ul>
+              <li>Ajudar com as <strong>lições de casa da escola</strong>;</li>
+              <li>Reforçar conteúdos de <strong>português, matemática e outras matérias</strong>;</li>
+              <li>Alfabetizar;</li>
+              <li>Trabalhar com <strong>atividades extras</strong> preparadas especialmente para o que seu filho precisa aprender;</li>
+              <li>Preparar para <strong>provas e avaliações</strong> com resumos, exercícios e revisões.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="box" style="background-color: #d1ecf1; border-radius: 10px;">
+            <p style="font-size: 2rem; margin-bottom: 0.5rem;">📲</p>
+            <h3 class="title is-5" style="color: #0c5460;">Comunicação com os pais e planos acessíveis</h3>
+            <p>Você acompanha tudo de perto! Falamos sobre o progresso do aluno e mantemos uma <strong>comunicação aberta pelo WhatsApp</strong> para tirar dúvidas e alinhar objetivos.  Além disso, oferecemos <strong>planos mensais com valores fixos</strong>, garantindo que seu filho tenha sempre um acompanhamento dedicado e constante.</p>
+          </div>
+        </div></div>
+
+
+<div class="has-text-centered" style="margin-top: 2rem;">
+  <a href="#" class="button is-link is-medium responsive-button">Assista o vídeo demonstrativo</a>
 </div>
-<br><br><br><br>
-  <h1 class="title has-text-centered">FUNDADORAS</h1>
-<div class="columns is-centered" style="max-width: 860px; margin: auto;">
-  <div class="column is-narrow">
-    <div class="card" style="max-width: 400px;">
-      <div class="card-image">
-        <figure class="image" style="width: 400px;">
-          <img src="isabella.jpg" alt="Placeholder image" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            
-          </div>
-          <div class="media-content">
-            <p class="title is-4">Isabella Neves</p>
-            <p class="subtitle is-6">Licenciada em Pedagogia e Letras</p>
-          </div>
-        </div>
 
+    
+
+       <section class="section"> 
+        <h2 class="title is-3 has-text-centered" style="color: #3273dc; margin-bottom: 2rem;">
+        Pacotes de aulas
+      </h2>
+  <div class="container">
+    <div class="columns is-multiline is-centered"> 
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header has-background-warning">
+        <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Aulas de Matérias Escolares</p>
+      </header>
+      <div class="card-content">
         <div class="content">
-          Pedagoga desde 2018 e licenciada em Letras desde 2024. Sempre gostei de aprender e compartilhar conhecimento. 
-          Na escola já diziam que eu devia ser professora. Como professora, procuro unir sensibilidade, clareza 
-          e responsabilidade no ensino, respeitando o ritmo de cada aluno e buscando sempre despertar o interesse pelo aprendizado. 
+        Aulas de Português, Matemática e/ou outras matérias escolares (Reforço Escolar)<br><br>
+        Aulas de 1:00 de 1 à 2 vezes na semana. 
+
         </div>
       </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Quero esse</a>
+      </footer>
     </div>
   </div>
-  
-  <div class="column is-narrow">
-    <div class="card" style="max-width: 400px;">
-      <div class="card-image">
-        <figure class="image" style="width: 400px;">
-          <img src="carol.webp" alt="Placeholder image" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            
-          </div>
-          <div class="media-content">
-            <p class="title is-4">Carolina Neves</p>
-            <p class="subtitle is-6">Licenciada em Pedagogia</p>
-          </div>
-        </div>
 
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header has-background-primary">
+        <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Aulas de Alfabetização</p>
+      </header>
+      <div class="card-content">
         <div class="content">
-          Pedagoga desde 2021, desde pequena quis ser professora. Sempre fui muito tímida na escola 
-          e por vergonha dos colegas não tirava minhas dúvidas dentro da sala de aula. Nas aulas particulares 
-          esse tipo de situação não existe, por isso decidi investir nisso, respeitando o tempo de aprender 
-          de cada aluno e buscando sempre adaptar a forma de ensinar para que todos se sintam acolhidos e consigam avançar.
+          Aulas de 30min até 5 vezes na semana.
         </div>
       </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Quero esse</a>
+      </footer>
+    </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header has-background-danger">
+        <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Auxílio 
+            nas lições de casa</p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Tempo de aula variável. Quantidade de aulas de acordo com a demanda escolar e disponibilidade de horários da Unnie.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Quero esse</a>
+      </footer>
+    </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header has-background-success">
+        <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Estudo para provas</p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Aulas de 1:00. Quantidade de aulas conforme a necessidade dos estudos e disponibilidade de horários da Unnie.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Quero esse</a>
+      </footer>
+    </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header has-background-link">
+    <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote personalizado para a necessidade</p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Conforme a necessidade e demanda do aluno. Podemos misturar os pacotes ou fazer um pacote específico para a necessidade 
+          do aluno. Quantidade de aulas e tempo de aula variável.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Quero esse</a>
+      </footer>
     </div>
   </div>
 </div>
-</div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+</section>
 
 <!------------------------------------- Contato --------------------------------------->
 
@@ -448,6 +568,16 @@
       });
     });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.navbar-burger');
+  const menu = document.getElementById('navbarBasicExample');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
+  });
+});
+
 </script>
 
 
