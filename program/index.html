@@ -34,6 +34,7 @@
     z-index: 1000;
     background-color: #ecf1f7;
   }
+  
 
   body {
     padding-top: 60px;
@@ -55,164 +56,94 @@
   overflow: hidden;
 }
 
-  .swiper {
-    width: 100vw;
-    height: 80vh;
-    max-height: 600px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  }
-
-  .swiper-slide {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
- .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* padrão para desktop */
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 12px;
-}
-
-@media screen and (max-width: 768px) {
-  .swiper-slide img {
-    object-fit: contain; /* no celular, mostra a imagem inteira */
-    background-color: #ecf1f7; /* fundo para evitar bordas feias */
-  }
-}
-
-  .slide-text {
-    position: absolute;
-    top: 30%;
-    left: 3%;
-    color: #b32121;
-    font-size: 4rem;
-    font-weight: 700;
-    max-width: 80vw;
-    white-space: normal;
-    overflow: visible;
-    letter-spacing: 1.2px;
-  }
-
-  .slide-button {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    padding: 12px 28px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #070707;
-    background: transparent;
-    border: 2px solid #070707;
-    border-radius: 6px;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    user-select: none;
-  }
-
-  .slide-button.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 32px;
-    height: 32px;
-    color: black;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  .swiper-button-prev:hover,
-  .swiper-button-next:hover {
-    transform: scale(1.1);
-  }
-
-  /* Responsividade */
-  @media screen and (max-width: 768px) {
-    .swiper {
-      height: 50vh;
-      max-height: none;
+     .swiper {
+      width: 100vw;
+      height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 2 / 1;
     }
 
-    .slide-text {
-      font-size: 1.4rem;
-      top: 30%;
-      left: 5%;
-      max-width: 90vw;
-      white-space: normal;
-      overflow: visible;
-      letter-spacing: normal;
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* mostra a imagem inteira, sem cortar */
+      display: block;
+    }
+
+    @media screen and (min-width: 769px) {
+      .swiper-slide img {
+        object-fit: cover; /* em telas maiores a imagem cobre o slide */
+      }
     }
 
     .slide-button {
-      top: 55%;
-      left: 5%;
-      padding: 10px 20px;
-      font-size: 1rem;
+      position: absolute;
+      bottom: 10%; /* posição padrão */
+      left: 65%;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: transparent;
+      font-weight: 600;
+      background: #004aad;
+      color: #ffffff;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+      z-index: 10;
+      user-select: none;
     }
 
-    .columns.is-centered {
-      flex-direction: column;
-      align-items: center;
-    }
-    .responsive-button {
-    width: auto;
-    max-width: 400px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    white-space: nowrap;
-    display: inline-block; /* garante que o botão se ajuste ao texto */
-  }
-
-  @media (max-width: 480px) {
-    .responsive-button {
-      width: 90%;
-      white-space: normal; /* permite quebra de linha para não cortar texto */
-      font-size: 0.9rem; /* reduz um pouco a fonte */
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-
-  }
-
-  /* Para telas muito pequenas (ex: celulares pequenos) */
-  @media screen and (max-width: 400px) {
-    .swiper {
-      height: 40vh;
+    .slide-button:hover {
+      background-color: #070707;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
 
-    .slide-text {
-      font-size: 1.5rem;
-      top: 25%;
-      left: 5%;
-      max-width: 90vw;
+    .slide-button.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .slide-button {
-      top: 50%;
-      left: 5%;
-      padding: 8px 16px;
-      font-size: 0.9rem;
+    @media screen and (max-width: 768px) {
+      .swiper {
+        height: 50vh;
+      }
+
+      .slide-button {
+        font-size: 1rem;
+        left: 58%;
+        padding: 10px 20px;
+        bottom: 15%; /* sobe mais no tablet */
+      }
     }
-  }
+
+    @media screen and (max-width: 400px) {
+      .swiper {
+        height: 40vh;
+      }
+
+      .slide-button {
+        font-size: 0.85rem;
+        left: 50%;
+        padding: 8px 16px;
+        bottom: 18%; /* sobe ainda mais no celular */
+        transform: translateX(-50%) translateY(20px);
+      }
+
+      .slide-button.show {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
 
 
   </style>
@@ -253,38 +184,33 @@
 
 <!------------------------------------- SLIDE CARROSSEL --------------------------------------->  
 
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="1.png" alt="Slide 1" />
-      <div class="slide-text" data-text="AULAS PARTICULARES"></div>
-      <button class="slide-button">Saiba mais</button>
-    </div>
-    <div class="swiper-slide">
-      <img src="2.png" alt="Slide 2" />
-      <div class="slide-text" data-text="AULAS DE PORTUGUÊS"></div>
-      <button class="slide-button">Saiba mais</button>
-    </div>
-    <div class="swiper-slide">
-      <img src="3.png" alt="Slide 3" />
-      <div class="slide-text" data-text="AULAS DE MATEMÁTICA"></div>
-      <button class="slide-button">Saiba mais</button>
-    </div>
-    <div class="swiper-slide">
-      <img src="4.png" alt="Slide 4" />
-      <div class="slide-text" data-text="AUXÍLIO NAS TAREFAS&lt;br&gt;DE CASA"></div> 
-      
-
-      <button class="slide-button" style="top: 70%;">Saiba mais</button>
-    </div>
-    <div class="swiper-slide">
-      <img src="5.png" alt="Slide 5" />
-      <div class="slide-text" data-text="REFORÇO ESCOLAR"></div>
-      <button class="slide-button">Saiba mais</button>
+<!-- Swiper Carousel -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="1.png" alt="Slide 1" />
+        <a href="#comofunciona" class="slide-button">Saiba mais</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="2.png" alt="Slide 2" />
+        <a href="#comofunciona" class="slide-button">Saiba mais</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="3.png" alt="Slide 3" />
+        <a href="#comofunciona" class="slide-button">Saiba mais</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="4.png" alt="Slide 4" />
+        <a href="#comofunciona" class="slide-button">Saiba mais</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="5.png" alt="Slide 5" />
+        <a href="#comofunciona" class="slide-button">Saiba mais</a>
+      </div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  </div>
+
 
   <!------------------------------------- Como funciona --------------------------------------->
 <section id="comofunciona" class="section">
@@ -302,7 +228,7 @@
       <div class="columns is-multiline is-variable is-6">
 
         <div class="column is-half">
-          <div class="box" style="background-color: #e8f0fe; border-radius: 10px;">
+          <div class="box" style="background-color: #e8f0fe; border-radius: 10px; color: #4a4a4a;">
             <p style="font-size: 2rem; margin-bottom: 0.5rem;">🧑‍🏫</p>
             <h3 class="title is-5" style="color: #2952cc;">Aulas individuais e personalizadas</h3>
             <p>Cada aluno é único! Por isso, nossas aulas são <strong>individuais</strong>, adaptadas ao ritmo e às necessidades de cada criança ou adolescente. Trabalhamos com o conteúdo que ele está aprendendo na escola ou com o que precisa reforçar.</p>
@@ -310,7 +236,7 @@
         </div>
 
         <div class="column is-half">
-          <div class="box" style="background-color: #fff3cd; border-radius: 10px;">
+          <div class="box" style="background-color: #fff3cd; border-radius: 10px; color: #4a4a4a;">
             <p style="font-size: 2rem; margin-bottom: 0.5rem;">💻</p>
             <h3 class="title is-5" style="color: #856404;">Plataforma fácil de usar</h3>
             <p>As aulas acontecem por videochamada, na plataforma Zoom — simples de acessar, mesmo para quem não tem muita experiência com tecnologia. Antes da primeira aula, você recebe tutorial mostrando a maneira de entrar, é muito intuitivo para as crianças.</p>
@@ -318,7 +244,7 @@
         </div>
 
         <div class="column is-half">
-          <div class="box" style="background-color: #d4edda; border-radius: 10px;">
+          <div class="box" style="background-color: #d4edda; border-radius: 10px; color: #4a4a4a;">
             <p style="font-size: 2rem; margin-bottom: 0.5rem;">📚</p>
             <h3 class="title is-5" style="color: #155724;">Apoio nas lições de casa e muito mais</h3>
             <ul>
@@ -332,7 +258,7 @@
         </div>
 
         <div class="column is-half">
-          <div class="box" style="background-color: #d1ecf1; border-radius: 10px;">
+          <div class="box" style="background-color: #d1ecf1; border-radius: 10px; color: #4a4a4a;">
             <p style="font-size: 2rem; margin-bottom: 0.5rem;">📲</p>
             <h3 class="title is-5" style="color: #0c5460;">Comunicação com os pais e planos acessíveis</h3>
             <p>Você acompanha tudo de perto! Falamos sobre o progresso do aluno e mantemos uma <strong>comunicação aberta pelo WhatsApp</strong> para tirar dúvidas e alinhar objetivos.  Além disso, oferecemos <strong>planos mensais com valores fixos</strong>, garantindo que seu filho tenha sempre um acompanhamento dedicado e constante.</p>
@@ -357,15 +283,15 @@
       <header class="card-header has-background-warning">
         <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Aulas de Matérias Escolares</p>
       </header>
-      <div class="card-content">
+      <div class="card-content" style="background-color: #ffffff;">
         <div class="content">
         Aulas de Português, Matemática e/ou outras matérias escolares (Reforço Escolar)<br><br>
         Aulas de 1:00 de 1 à 2 vezes na semana. 
 
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Mat%C3%A9rias%20Escolares%22" class="card-footer-item">Quero esse</a>
+      <footer class="card-footer" style="background-color: #ffffff;">
+        <a href="#" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -375,13 +301,13 @@
       <header class="card-header has-background-primary">
         <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Aulas de Alfabetização</p>
       </header>
-      <div class="card-content">
+      <div class="card-content" style="background-color: #ffffff;">
         <div class="content">
           Aulas de 30min até 5 vezes na semana.
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Alfabetiza%C3%A7%C3%A3o%22" class="card-footer-item">Quero esse</a>
+      <footer class="card-footer" style="background-color: #ffffff;">
+        <a href="#" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -392,13 +318,13 @@
         <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Auxílio 
             nas lições de casa</p>
       </header>
-      <div class="card-content">
+      <div class="card-content" style="background-color: #ffffff;">
         <div class="content">
           Tempo de aula variável. Quantidade de aulas de acordo com a demanda escolar e disponibilidade de horários da Unnie.
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Aux%C3%ADlio%20nas%20li%C3%A7%C3%B5es%20de%20casa%22" class="card-footer-item">Quero esse</a>
+      <footer class="card-footer" style="background-color: #ffffff;">
+        <a href="#" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -408,13 +334,13 @@
       <header class="card-header has-background-success">
         <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote Estudo para provas</p>
       </header>
-      <div class="card-content">
+      <div class="card-content" style="background-color: #ffffff;">
         <div class="content">
           Aulas de 1:00. Quantidade de aulas conforme a necessidade dos estudos e disponibilidade de horários da Unnie.
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Estudo%20para%20provas%22" class="card-footer-item">Quero esse</a>
+      <footer class="card-footer" style="background-color: #ffffff;">
+        <a href="#" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -424,14 +350,14 @@
       <header class="card-header has-background-link">
     <p class="card-header-title has-text-centered" style="text-align: center; white-space: normal;">Pacote personalizado para a necessidade</p>
       </header>
-      <div class="card-content">
+      <div class="card-content" style="background-color: #ffffff;">
         <div class="content">
           Conforme a necessidade e demanda do aluno. Podemos misturar os pacotes ou fazer um pacote específico para a necessidade 
           do aluno. Quantidade de aulas e tempo de aula variável.
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Personaliz%C3%A1vel%22" class="card-footer-item">Quero esse</a>
+      <footer class="card-footer" style="background-color: #ffffff;">
+        <a href="#" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -447,7 +373,7 @@
 
 <section id="contato" class="section">
   <div class="container">
-    <h1 class="title has-text-centered">ENTRE EM CONTATO</h1><br>
+    <h1 class="title has-text-centered" style="color: #4a4a4a;">ENTRE EM CONTATO</h1><br>
 
     <div class="columns is-variable is-6">
       <div class="column has-background-info has-text-white has-text-centered py-6">
@@ -481,70 +407,48 @@
 <footer class="footer has-background-link has-text-white" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
   <div class="content has-text-centered" style="padding-top: 0.25rem; padding-bottom: 0.25rem;">
         <p class="is-size-7">
-     Desenvolvido por Carolina @caarolsneves com Bulma — código MIT, conteúdo sob CC BY-NC-SA 4.0.
+     Desenvolvido por Carolina @caarolsneves com Bulma — código MIT, conteúdo sob CC BY-NC-SA 4.0. <a href="politicadeprivacidade.html" 
+     target="_blank" style="color: #ffffff; text-decoration: underline;">Política de Privacidade</a>
+
     </p>
   </div>
 </footer>
 
 
 <!------------------------------------- JAVA SCRIPT --------------------------------------->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
-  // Efeito typing sem cursor, agora com callback para mostrar o botão depois
-  function typingEffect(element, text, delay = 100, callback) {
-    element.innerHTML = '';
-    let i = 0;
-    const interval = setInterval(() => {
-      element.innerHTML = text.substring(0, i);
-      i++;
-      if (i > text.length) {
-        clearInterval(interval);
-        if (typeof callback === 'function') callback();
-      }
-    }, delay);
-  }
 
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: {
-      delay: 5500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true,
-    },
-    on: {
-      init: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        const textDiv = activeSlide.querySelector('.slide-text');
-        const button = activeSlide.querySelector('.slide-button');
-        typingEffect(textDiv, textDiv.dataset.text, 40, () => {
-          button.classList.add('show');
-        });
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    function showButtonWithFade() {
+      document.querySelectorAll('.slide-button').forEach(btn => {
+        btn.classList.remove('show');
+      });
+
+      const activeSlide = document.querySelector('.swiper-slide-active');
+      const btn = activeSlide.querySelector('.slide-button');
+
+      if (btn) {
+        setTimeout(() => {
+          btn.classList.add('show');
+        }, 400); // Delay para efeito fade
+      }
+    }
+
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false
       },
-      slideChangeTransitionStart: function () {
-        this.slides.forEach(slide => {
-          const btn = slide.querySelector('.slide-button');
-          if (btn) btn.classList.remove('show');
-          const text = slide.querySelector('.slide-text');
-          if (text) text.textContent = '';
-        });
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
       },
-      slideChangeTransitionEnd: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        const textDiv = activeSlide.querySelector('.slide-text');
-        const button = activeSlide.querySelector('.slide-button');
-        typingEffect(textDiv, textDiv.dataset.text, 100, () => {
-          button.classList.add('show');
-        });
-      },
-    },
-  });
+      on: {
+        init: showButtonWithFade,
+        slideChangeTransitionEnd: showButtonWithFade
+      }
+    });
 
   document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.navbar-burger');
@@ -568,6 +472,5 @@
     });
   });
 </script>
-
 </body>
 </html>
