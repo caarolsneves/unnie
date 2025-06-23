@@ -20,32 +20,13 @@
     margin: 0; padding: 0; height: 100%;
     font-family: 'Poppins', sans-serif;
     background: #ecf1f7;
-    color: #4a4a4a;
-  }
-
-  .navbar-item:hover {
-    background-color: #d3d3d3;
-    color: #000;
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background-color: #ecf1f7;
-  }
-
-  body {
-    padding-top: 60px;
-  }
-
-    html, body {
-    margin: 0; padding: 0; height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: #ecf1f7;
     color: #222;
   }
+  body {
+  padding-top: 60px;
+}
 
+  
   .navbar-item:hover {
     background-color: #d3d3d3;
     color: #000;
@@ -58,25 +39,6 @@
     background-color: #ecf1f7;
   }
 
-  body {
-    padding-top: 60px;
-  }
-
-  .column.is-one-fifth {
-  display: flex;
-  flex-direction: column;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card-content {
-  flex-grow: 1;
-  overflow: hidden;
-}
 
 
   .column.is-one-fifth {
@@ -117,12 +79,6 @@
       display: block;
     }
 
-       .video-button {
-    white-space: normal;
-    font-size: 1.25rem; /* tamanho padrão no desktop */
-  }
-
-
     @media screen and (min-width: 769px) {
       .swiper-slide img {
         object-fit: cover; /* em telas maiores a imagem cobre o slide */
@@ -160,6 +116,13 @@
       transform: translateY(0);
     }
 
+    .video-button {
+    white-space: normal;
+    font-size: 1.25rem; /* tamanho padrão no desktop */
+  }
+
+    
+
     @media screen and (max-width: 768px) {
       .swiper {
         height: 50vh;
@@ -173,6 +136,7 @@
       }
       
     }
+
 
     @media screen and (max-width: 400px) {
       .swiper {
@@ -194,6 +158,32 @@
 strong {
   color: inherit !important;
 }
+
+/* Força o tema claro e cores consistentes */
+
+html, body {
+  background-color: #ecf1f7 !important;
+  color: #222 !important;
+}
+
+.navbar {
+  background-color: #ecf1f7 !important;
+  color: #222 !important;
+}
+
+.navbar-item {
+  color: #000 !important;
+}
+
+.card, .card-content, .card-footer, .box {
+  background-color: #fff !important;
+  color: #4a4a4a !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+.card-header-title {
+  color: #ffffff !important;
+}
+
   </style>
 
   <!------------------------------------- BARRA DE NAVEGAÇÃO --------------------------------------->
@@ -320,6 +310,8 @@ strong {
   </a>
 </div>
 
+
+
     
 
        <section class="section"> 
@@ -341,7 +333,7 @@ strong {
         </div>
       </div>
       <footer class="card-footer" style="background-color: #ffffff;">
-        <a href="#" class="card-footer-item">Quero esse</a>
+        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Mat%C3%A9rias%20Escolares%22" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -357,7 +349,7 @@ strong {
         </div>
       </div>
       <footer class="card-footer" style="background-color: #ffffff;">
-        <a href="#" class="card-footer-item">Quero esse</a>
+        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Alfabetiza%C3%A7%C3%A3o%22" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -374,7 +366,7 @@ strong {
         </div>
       </div>
       <footer class="card-footer" style="background-color: #ffffff;">
-        <a href="#" class="card-footer-item">Quero esse</a>
+        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Aux%C3%ADlio%20nas%20li%C3%A7%C3%B5es%20de%20casa%22" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -390,7 +382,7 @@ strong {
         </div>
       </div>
       <footer class="card-footer" style="background-color: #ffffff;">
-        <a href="#" class="card-footer-item">Quero esse</a>
+        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Estudo%20para%20provas%22" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -407,7 +399,7 @@ strong {
         </div>
       </div>
       <footer class="card-footer" style="background-color: #ffffff;">
-        <a href="#" class="card-footer-item">Quero esse</a>
+        <a href="https://wa.me/5511990044132?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20de%20aulas%20online%20%22Personaliz%C3%A1vel%22" class="card-footer-item">Quero esse</a>
       </footer>
     </div>
   </div>
@@ -431,7 +423,11 @@ strong {
           <i class="fas fa-phone fa-2x"></i>
         </span>
         <p class="mt-2">TELEFONE (WHATSAPP)</p>
-        <p class="title is-5 has-text-white">+55 (11)93066-9604</p>
+        <p class="title is-5 has-text-white">
+  <a href="https://wa.me/5511990044132" target="_blank" class="has-text-white">
+    +55 (11)99004-4132
+  </a>
+</p>
       </div>
 
       <div class="column has-background-warning has-text-white has-text-centered py-6">
