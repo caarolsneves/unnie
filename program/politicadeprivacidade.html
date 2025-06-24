@@ -15,14 +15,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!------------------------------------- CSS --------------------------------------->
 
-  <style>
+    <style>
   html, body {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Poppins', sans-serif;
     background: #ecf1f7;
     color: #222;
   }
+  body {
+  padding-top: 60px;
+}
 
+  
   .navbar-item:hover {
     background-color: #d3d3d3;
     color: #000;
@@ -34,11 +38,8 @@
     z-index: 1000;
     background-color: #ecf1f7;
   }
-  
 
-  body {
-    padding-top: 60px;
-  }
+
 
   .column.is-one-fifth {
   display: flex;
@@ -55,9 +56,133 @@
   flex-grow: 1;
   overflow: hidden;
 }
+
+
+     .swiper {
+      width: 100vw;
+      height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 2 / 1;
+    }
+
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* mostra a imagem inteira, sem cortar */
+      display: block;
+    }
+
+    @media screen and (min-width: 769px) {
+      .swiper-slide img {
+        object-fit: cover; /* em telas maiores a imagem cobre o slide */
+      }
+    }
+
+    .slide-button {
+      position: absolute;
+      bottom: 10%; /* posição padrão */
+      left: 65%;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: transparent;
+      font-weight: 600;
+      background: #004aad;
+      color: #ffffff;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .slide-button:hover {
+      background-color: #070707;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .slide-button.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .video-button {
+    white-space: normal;
+    font-size: 1.25rem; /* tamanho padrão no desktop */
+  }
+
+    
+
+    @media screen and (max-width: 768px) {
+      .swiper {
+        height: 50vh;
+      }
+
+      .slide-button {
+        font-size: 1rem;
+        left: 58%;
+        padding: 10px 20px;
+        bottom: 15%; /* sobe mais no tablet */
+      }
+      .navbar-menu {
+    background-color: #ecf1f7 !important;
+  }
+      
+    }
+
+
+    @media screen and (max-width: 400px) {
+      .swiper {
+        height: 40vh;
+      }
+
+      .slide-button {
+        font-size: 0.85rem;
+        left: 50%;
+        padding: 8px 16px;
+        bottom: 18%; /* sobe ainda mais no celular */
+        transform: translateX(-50%) translateY(20px);
+      }
+
+      .slide-button.show {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
 strong {
   color: inherit !important;
 }
+
+/* Força o tema claro e cores consistentes */
+
+html, body {
+  background-color: #ecf1f7 !important;
+  color: #222 !important;
+}
+
+
+.navbar-item {
+  color: #000 !important;
+}
+
+.card, .card-content, .card-footer, .box {
+  background-color: #fff !important;
+  color: #4a4a4a !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+.card-header-title {
+  color: #ffffff !important;
+}
+
   </style>
 
   <!------------------------------------- BARRA DE NAVEGAÇÃO --------------------------------------->
