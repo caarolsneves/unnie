@@ -13,14 +13,18 @@
     href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
   />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 <!------------------------------------- CSS --------------------------------------->
 
   <style>
   html, body {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Poppins', sans-serif;
+      height: 100%;
     background: #ecf1f7;
     color: #222;
+    display: flex;
+  flex-direction: column;
   }
 
   .navbar-item:hover {
@@ -60,6 +64,18 @@ strong {
   color: inherit !important;
 }
 
+ .video-container {
+     width: 100%;
+    max-width: 514px;
+    margin: 0 auto;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+  }
   </style>
 
   <!------------------------------------- BARRA DE NAVEGAÇÃO --------------------------------------->
@@ -98,16 +114,22 @@ strong {
  </nav>
 </head>
 <body>
+   <div style="flex: 1; display: flex; flex-direction: column;">
 
-  <!-- Cabeçalho simples -->
+  <!-- video -->
   <section class="section">
     <div class="container">
-      <h1 class="title is-3 has-text-centered" style="color: #0a0a0a;">Um pedaço de como são as aulas - Aula de Alfabetização</h1>
-     
-      <div style="text-align: center;"><iframe width="914" height="514" src="https://www.youtube.com/embed/xc-plPU7Gzg" 
-      title="Como funcionam as aulas de alfabetização online - Unnie Apoio Escolar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-  </section>
+       <div class="box" style="background: #f9faff; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 2rem; margin-top: -2rem;">
 
+      <h1 class="title is-3 has-text-centered" style="color: #0a0a0a;">Aulinha de Alfabetização</h1>
+      
+     
+     <div style="max-width: 990px; margin: 0 auto;">
+<video id="meuVideo" controls>
+  <source src="videodemo.mp4" type="video/mp4" />
+</video></div></div></div>
+    </section>
+</div>
 <!------------------------------------- RODAPÉ --------------------------------------->
 <footer class="footer has-background-link has-text-white" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
   <div class="content has-text-centered" style="padding-top: 0.25rem; padding-bottom: 0.25rem;">
@@ -144,8 +166,9 @@ strong {
     });
   });
 </script>
-
-
-
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+  const player = new Plyr('#meuVideo');
+</script>
 </body>
 </html>
