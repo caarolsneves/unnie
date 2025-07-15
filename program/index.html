@@ -124,18 +124,26 @@
 
     
 
-    @media screen and (max-width: 768px) {
-      .swiper {
-        height: 50vh;
-      }
+/* ---------- Telas menores que 768px ---------- */
+  @media screen and (max-width: 768px) {
+  .swiper {
+    aspect-ratio: 2 / 1;
+    height: auto;
+  }
+
+  .swiper-slide img {
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1); /* sem zoom */
+  }
 
 
-      .slide-button {
-        font-size: 1rem;
-        left: 66%;
-        padding: 10px 20px;
-        bottom: 13%; /* sobe mais no tablet */
-      }
+    .slide-button {
+      font-size: 1rem;
+      left: 66%;
+      padding: 10px 20px;
+      bottom: 13%;
+    }
       .navbar-menu {
     background-color: #ecf1f7 !important;
   }
